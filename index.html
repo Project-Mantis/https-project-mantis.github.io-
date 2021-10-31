@@ -1,0 +1,150 @@
+<html>
+
+<head>
+
+    <title>Happy Tissue Friends Generator</title>
+
+    <script>
+
+    window.onload = function ()
+        {
+            // BG
+            var paperbg = new Image();
+            var paperbgnum=Math.floor(Math.random()*7)+1; // change 10 to number of bg files
+            var paperbgname="bg" + paperbgnum + ".png";
+            paperbg.src=paperbgname;
+
+            // BODY
+            var paperbody = new Image();
+            var paperbodynum=Math.floor(Math.random()*10)+1; // change 10 to number of body files
+            var paperbodyname="body" + paperbodynum + ".png";
+            paperbody.src=paperbodyname;
+
+            // MUSTER
+            var paperkontur = new Image();
+            var paperkonturnum=Math.floor(Math.random()*7)+1; // change 7 to number of muster files
+            var paperkonturname="kontur" + paperkonturnum + ".png";
+            paperkontur.src=paperkonturname;
+
+            // EYES
+            var papereyes = new Image();
+            var papereyesnum=Math.floor(Math.random()*12)+1; // change 13 to number of eye files
+            var papereyesname="eyes" + papereyesnum + ".png";
+            papereyes.src=papereyesname;
+
+            // ARMLEFT
+            var paperarmleft = new Image();
+            var paperarmleftnum=Math.floor(Math.random()*9)+1; // change 9 to number of leftarm files
+            var paperarmleftname="armleft" + paperarmleftnum + ".png";
+            paperarmleft.src=paperarmleftname;
+
+            // ARMRIGHT
+            var paperarmright = new Image();
+            var paperarmrightnum=Math.floor(Math.random()*9)+1; // change 9 to number of rightarm files
+            var paperarmrightname="armright" + paperarmrightnum + ".png";
+            paperarmright.src=paperarmrightname;
+
+            // LEG
+            var paperleg = new Image();
+            var paperlegnum=Math.floor(Math.random()*7)+1; // change 7 to number of leg files
+            var paperlegname="leg" + paperlegnum + ".png";
+            paperleg.src=paperlegname;
+
+            // HAT
+            var paperhat = new Image();
+            var paperhatnum=Math.floor(Math.random()*9)+1; // change 9 to number of hat files
+            var paperhatname="hat" + paperhatnum + ".png";
+            paperhat.src=paperhatname;
+
+            // BG LOADED
+            paperbg.onload=function()
+            {
+                buildpaper();
+            }
+
+            // BODY LOADED
+            paperbody.onload=function()
+            {
+                buildpaper();
+            }
+
+            // MUSTER LOADED
+            paperkontur.onload=function()
+            {
+                buildpaper();
+            }
+
+            // EYES LOADED
+            papereyes.onload=function()
+            {
+                buildpaper();
+            }
+
+            // ARMLEFT LOADED
+            paperarmleft.onload=function()
+            {
+                buildpaper();
+            }
+
+            // ARMRIGHT LOADED
+            paperarmright.onload=function()
+            {
+                buildpaper();
+            }
+
+            // LEGS LOADED
+            paperleg.onload=function()
+            {
+                buildpaper();
+            }
+
+            // HAT LOADED
+            paperhat.onload=function()
+            {
+                buildpaper();
+            }
+
+            function buildpaper()
+            {
+                var canvas=document.getElementById('canvas');
+                var ctx = canvas.getContext('2d');
+                canvas.width=800;
+                canvas.height=800;
+
+                // DRAW BG
+                ctx.drawImage(paperbg,((800-paperbg.width)/2),0);
+                // DRAW BODY
+                ctx.drawImage(paperbody,((800-paperbody.width)/2),50);
+                // DRAW MUSTER
+                ctx.drawImage(paperkontur,((800-paperkontur.width)/2),50);
+                // DRAW EYES
+                ctx.drawImage(papereyes,((800-papereyes.width)/2),50);
+                // DRAW ARMLEFT
+                ctx.drawImage(paperarmleft,((800-paperarmleft.width)/2),50);
+                // DRAW ARMRIGHT
+                ctx.drawImage(paperarmright,((800-paperarmleft.width)/2),50);
+                // DRAW LEGS
+                ctx.drawImage(paperleg,((800-paperleg.width)/2),50);
+                // DRAW HAT
+                ctx.drawImage(paperhat,((800-paperhat.width)/2),50);
+
+            }
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+        <div align="center">
+
+<canvas id="canvas" style="border:2px solid #000000;"></canvas>
+<br><br>
+<button onClick="window.location.reload();">Generiere!</button>
+
+        </div>
+
+</body>
+
+</html>
